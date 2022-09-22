@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <h1>Ini Tugas 3 (Daftar Tontonan)</h1>
+
+  <h5>Name:  <p>{{name}}</p></h5>
+ 
+
+  <h5>Student ID: <p>{{npm}}</p></h5>
+  
+
+  <table>
+    <tr>
+      <th>Ditonton</th>
+      <th>Judul</th>
+      <th>Rating</th>
+      <th>Tanggal Rilis</th>
+      <th>Review</th>
+    </tr>
+    {% comment %} Add the data below this line {% endcomment %}
+    {% for i in mylist %}
+      <tr>
+        <th>  {{i.watched}} </th>
+        <th>  {{i.title}} </th>
+        <th>  {{i.rating}}  </th>
+        <th>  {{i.release_date}}  </th>
+        <th>  {{i.review}}  </th>
+      </tr>
+    {% endfor %}
+
+  </table>
+
+ {% endblock content %}

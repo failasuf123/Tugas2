@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "Tukang Haji Naek Bubur",
+            "rating": 4,
+            "release_date": "2018-6-10",
+            "review": "Nasi sudah menjadi bubur, relase datenya mungkin diundur"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 2,
+        "fields": {
+            "watched": false,
+            "title": "Power Ranger Wild Force",
+            "rating": 1,
+            "release_date": "1998-16-10",
+            "review": "ingfo tutorial jadi renger merah"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 3,
+        "fields": {
+            "watched": false,
+            "title": "Raden Saleh Mencuri",
+            "rating": 5,
+            "release_date": "2022-11-9",
+            "review": "Dilarang mencuri !"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 4,
+        "fields": {
+            "watched": true,
+            "title": "KKN di desa pemerintahan",
+            "rating": 1,
+            "release_date": "2022-8-1",
+            "review": "Korupsi Kolusi dan Nepotisme perlu diberantas !"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 5,
+        "fields": {
+            "watched": false,
+            "title": "Ivanna",
+            "rating": 2,
+            "release_date": "2022-10-19",
+            "review": "Jelek bgt pas jadi hantu"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 6,
+        "fields": {
+            "watched": true,
+            "title": "Ku kira kau rumah",
+            "rating": 2,
+            "release_date": "2021-11-9",
+            "review": "Anjir lupa nonton"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 7,
+        "fields": {
+            "watched": true,
+            "title": "Avatar II",
+            "rating": 5,
+            "release_date": "2022-12-2",
+            "review": "Biru doang, keracunan kagak"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 8,
+        "fields": {
+            "watched": false,
+            "title": " Black Phanter: Wakanda Forever",
+            "rating": 5,
+            "release_date": "2022-11-9",
+            "review": "Wakanda fworevah"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 9,
+        "fields": {
+            "watched": false,
+            "title": "Spidermen",
+            "rating": 3,
+            "release_date": "2022-11-9",
+            "review": "Laba laba"
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 10,
+        "fields": {
+            "watched": true,
+            "title": "Dora the explorer",
+            "rating": 5,
+            "release_date": "2002-11-9",
+            "review": "Skweper jangan mencuri Raden Saleh!"
+        }
+    }
+]
