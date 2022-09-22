@@ -1,75 +1,28 @@
-<<<<<<< HEAD
-1. 	     >>    URLS   >> 
-	User 		         Views <<>> Model <<>> Database
-	     << Template <<
+Link Heroku : https://mytugas2pbpkatalog.herokuapp.com/mywatchlist/html/
 
-	
-	Pertama user mengakes website menggunakan url, user akan mendapatkan dua hal yaitu data dan layout.
-	data berasal dari data base dan layout berasal dari css,html,javascript.
-	
-	Urls akan menentukan tampilan yang user inginkan sesuai dengan urlsnya, intinya views merupakan percabangan 
-       yang menghubungkan urls, model, dan tamplate. views dapat menentukan apa yang akan di render berdasarkan perintah 
-       dari views.
+1. Html merupakan pembuatan kerangka dari user interface yang menyajikan tampilan
+   dari program yang dibuat, sedangkan JSON dan XML dapat digunakan untuk menyimpan 
+   elemen, namun keduanya terdapat perbedaan. JSON akan menyimpan elemen secara efisien
+   namun dengan tampilan yang kurang rapi, sedangkan XML akan ditampilkan secara lebih terstruktur
+   dan mudah dibaca oleh manusia dan mesin, akan tetapi XML kurang efisien.
+   HTML akan memplotkan bagian-bagian seperti tamplate yang akan ditampilkan kepada user,
+   sedangkan data dapat ditampilkan dalam bentuk xml mapun json.
 
-	Apabila views membutuhkan data, maka views akan mengambil data dari model, dimana model akan terhubung dengan database
-       yang menyimpan data tertentu 
-
-	Kemudian views akan mengembalikan data melalui tamplate yaitu html, html akan mengembalikan tampilan yang sudah diupdate
-       kepada user dengan data yang telah berubah.
+ 2. Dalam sebuah platform terdapat interaksi antara user dengan platform tersebut, Platform akan mewadahi aktivias yang diinginkan oleh user dalam memakai fasilitas user. Untuk memfasilitasi hal tersebut dilakukan data delivery sehingga dapat merubah data, mengganti data, menerima data, dan sebagainya sesuai interkasi user. Data delivery akan menkoneksikan hal tersebut, yang mana proses pengantaran data akan sesuai apa yang diinginkan oleh user. Tanpa adanya data delivery interaksi antara user dengan program akan berjalan pasif karena tidak ada data yang dikirimkan.
 
 
-2.    Virtual Environment akan menciptakan suatu project python yang terisolas
-      Dari project lainya. Virtual Environment berfungsi apabila dimasa depan terdapat
-      update versi yang menyebabkan code yang kita buat saat ini tidak dapat berfungsi lagi
-      maka kita tetap bisa mengaksesnya menggunakan virtual environment
-
-3.    - saya memprogram views.py dengan mengimport class CatalogItem dari models di folder katalog
-        ,didalam class tertebut terdapat keterangan variabel yang memiliki variabel yang menyimpan data
-        dari database json. Saya membuat dictionary context yang berisi inputan kepada file
-        katalog.html yang akan di render.
-      - Saya memetakan data dari views di katalog.html dengan mengganti fill me dengan {{name}} dan {{npm}}
-        tentuya name dan npm sesuai dengan key dari dictionary context yang telah dibuat sebelumnya
-      - selain itu saya juga melakukan iterasi dari data yang diambil melelui list_katalog, dan mengiterasikannya
-        sehingga seluruh data masuk ke tabel.
-      - Saya melakukan depolyment ke internet dengan membuat aplikasi di heroku yang kemudian saya mengikuti
-        arahan dari tutorial, dimana pada tutorial tersebut say
-=======
-
-Link file :
-https://mytugas2pbpkatalog.herokuapp.com/katalog/
+3. cara kamu mengimplementasikan Program
+• Pertama kita membuat sebuah app yaitu mywatchlist, kemudian kita lakukan pendaftaran Django-app pada INSTALLED_APPS yang ada pada setting.py di folder project_django. 
+• Buat sebuah class pada model.py pada folder mywatchlist yaitu class MyWatchList yang memiliki 5 atribut yaitu watched, title, rating, release_date, dan review.
+• Setelah itu kita membuat folder fixture yang berisi file json yang berisi data yang telah disesuaikan dengan tiap-tiap atribut pada class MyWatchList
+• views.py dengan membuat  fungsi yaitu show_mywatchlist untuk menayangkan file html.
+• Membuat file html berdasarkan fungsi tersebut, dimana kita membuat table yang isinya adalah data dari json yang kita tayangkan dengan melakukan iterasi.
+• Kita juga harus menambahkan folder urls.py pada folder mywatchlist, dan menghubungkan urls untuk tampilan dari browser yang diambil dari views.py
+• Kemudian kita melakukan pengambilan data base dari file json yang telah dibuat, dengan mengimport class dari model pada file app. Kita membuat sebuah maps yang berisi nama, npm dan data yang kita ambil dari models. Kemudian kita render maps tersebut bersamaan dengan file html yang telah dibuat
+• Pada views.py kita melakukan import terhadap HttpResponse dan Serializer, kemudian kita membuat 3 fungsi lainya yaitu show_xml untuk menayangkan data xml, dan show_json untuk menayangkan data json, dan show_json_by_id. Kemudian kita melakukan return
 
 
-1. 	     >>    URLS   >> 
-	User 		         Views <<>> Model <<>> Database
-	     << Template <<
+![POSTMAN!](image/postmanss_1.png)
+![POSTMAN!](image/postmanss_2.png)
+![POSTMAN!](image/postmanss_3.png)
 
-	
-	Pertama user mengakes website menggunakan url, user akan mendapatkan dua hal yaitu data dan layout.
-	data berasal dari data base dan layout berasal dari css,html,javascript.
-	
-	Urls akan menentukan tampilan yang user inginkan sesuai dengan urlsnya, intinya views merupakan percabangan 
-       yang menghubungkan urls, model, dan tamplate. views dapat menentukan apa yang akan di render berdasarkan perintah 
-       dari views.
-
-	Apabila views membutuhkan data, maka views akan mengambil data dari model, dimana model akan terhubung dengan database
-       yang menyimpan data tertentu 
-
-	Kemudian views akan mengembalikan data melalui tamplate yaitu html, html akan mengembalikan tampilan yang sudah diupdate
-       kepada user dengan data yang telah berubah.
-
-
-2. Virtual Environment akan menciptakan suatu project python yang terisolas
-   Dari project lainya. Virtual Environment berfungsi apabila dimasa depan terdapat
-   update versi yang menyebabkan code yang kita buat saat ini tidak dapat berfungsi lagi
-   maka kita tetap bisa mengaksesnya menggunakan virtual environment
-3. - saya memprogram views.py dengan mengimport class CatalogItem dari models di folder katalog
-     ,didalam class tertebut terdapat keterangan variabel yang memiliki variabel yang menyimpan data
-     dari database json. Saya membuat dictionary context yang berisi inputan kepada file
-     katalog.html yang akan di render.
-    -Saya memetakan data dari views di katalog.html dengan mengganti fill me dengan {{name}} dan {{npm}}
-     tentuya name dan npm sesuai dengan key dari dictionary context yang telah dibuat sebelumnya
-     . selain itu saya juga melakukan iterasi dari data yang diambil melelui list_katalog, dan mengiterasikannya
-     sehingga seluruh data masuk ke tabel.
-    - Saya melakukan depolyment ke internet dengan membuat aplikasi di heroku yang kemudian saya mengikuti
-     arahan dari tutorial, dimana pada tutorial tersebut say
->>>>>>> b8f2234f94d7bcc286d3085eb439ad049fdb53e9
