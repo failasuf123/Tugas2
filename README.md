@@ -22,7 +22,10 @@ Link Heroku : https://mytugas2pbpkatalog.herokuapp.com/mywatchlist/html/
 • Pada views.py kita melakukan import terhadap HttpResponse dan Serializer, kemudian kita membuat 3 fungsi lainya yaitu show_xml untuk menayangkan data xml, dan show_json untuk menayangkan data json, dan show_json_by_id. Kemudian kita melakukan return
 
 
+<<<<<<< HEAD
 ![POSTMAN!](image/postmanss_1.png)
 ![POSTMAN!](image/postmanss_2.png)
 ![POSTMAN!](image/postmanss_3.png)
 
+=======
+>>>>>>> a0a791bc1c39e481b5b83c5ff189ad99872f1aba
