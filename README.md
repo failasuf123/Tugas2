@@ -16,9 +16,6 @@ Kita juga akan membuat forms.py yang memiliki class UserCreationForm, fungsi cla
 
 Kita membuat coockies dan memasukanya ke fungsi login, signin, dan delate, coockies tersebut akan manampilakn personalisasi user dangen data-data berdasarkan user tersebut. Kita juga menambahkan reuirements ketika akan mengakses main file todolist, yang digunakan apabila ingin mengakses main file harus maasuk terlebih dahulu
 <<<<<<< HEAD
-![POSTMAN!](image/postmanss_1.png)
-![POSTMAN!](image/postmanss_2.png)
-![POSTMAN!](image/postmanss_3.png)
 
 =======
 >>>>>>> a0a791bc1c39e481b5b83c5ff189ad99872f1aba
