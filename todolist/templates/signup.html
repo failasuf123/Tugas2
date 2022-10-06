@@ -1,34 +1,96 @@
-{% extends 'base.html' %}
 
-{% block meta %}
-<title>Registrasi Akun</title>
-{% endblock meta %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Todolist</title>
 
-{% block content %}  
-
-<div class = "login">
+      <!-- font type ubuntu connect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 14px;
+        }
+        body{
+            background-color: #141b18;
     
-    <h1>Formulir Registrasi</h1>  
+             color: #778899;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container{
+            background-color: whitesmoke;
+            height: 500px;
+            width: 50%;
+            justify-content: space-evenly;
 
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-        </form>
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            
+            align-items: center;
+            
 
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
+            border: solid 1px;
+            border-radius: 18px;
+            background-color: whitesmoke;
+        }
+        .header{
+            margin-top: 10px;
+            margin-bottom: 10px ;
+        }
+        .inputan{
+            align-items: center;
+           
+            
 
-</div>  
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Formulir Registrasi</h1>  
+        </div>
+        
+        <div class="form-context">
+            <form method="POST" >  
+                {% csrf_token %}  
+                <div class="inputan">  
+                    {{ form }}  
+                    <tr>  
+                        <td></td>
+                        <td><input type="submit" name="submit" value="Daftar"/></td>  
+                    </tr>  
+                </div>  
+            </form>
+        </div>
+      
+        <div class="footer">
+            {% if messages %}  
+            <ul>   
+                {% for message in messages %}  
+                    <li>{{ message }}</li>  
+                    {% endfor %}  
+            </ul>   
+        {% endif %}
+        </div>
+    </div>
+    
+   
+</body>
+</html>
 
-{% endblock content %}

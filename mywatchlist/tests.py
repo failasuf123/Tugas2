@@ -15,5 +15,5 @@ class TestThisProgram(TestCase):
         self.assertEqual(response.status_code,200)
 
     def test_this_program_json(self):
-        response = Client().get('/json/xml/')
+        response = Client().get('/mywatchlist/json/')
         self.assertEqual(response.status_code,200)

@@ -1,26 +1,132 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block meta %}
-<title>Add New Task</title>
-{% endblock meta %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Task</title>
+</head>
 
-{% block content %}  
+  <!-- font type ubuntu connect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
-<div class = "add_task">
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+          font-family: 'Ubuntu', sans-serif;
+      }
+      body{
+        background: rgb(9,97,80);
+        background: linear-gradient(104deg, rgba(9,97,80,1) 1%, rgba(20,27,24,1) 50%, rgba(4,44,37,1) 96%);
+        height: 100vh;
+        overflow: hidden;
+      }
+      .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 370px;
+            width: 400px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            border: solid 1px;
+            border-radius: 18px;
+            background-color: whitesmoke;
+            margin: 10px;
+      }
+      .upper{
+          margin-top: 15px;
+          color: #5DB075;
+         
+      }
+      .middle{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 5px;
+          padding: 10px;
+      }
+      .form{
+          margin: 15px;
+      }
+      .lower{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          margin-bottom: 15px;
+      }
+      .lower div{
+        display: flex;
+        align-items: center;
+       margin: 10px;
+      }
+      .lower button,.lower button input{
+          background-color: #5DB075 ;
+          border: none;
+          height: 40px;
+          width: 120px;
+          cursor: pointer;
+          color: whitesmoke;
+          border-radius: 10px;
+      }
+      .lower button:hover,.lower button input:hover{
+        box-shadow: 0px 4px 20px 5px rgba(145,255,219,0.75);
+        transform: translateY(-3px);
+        border: none;
+      }
+      .lower div a{
+          color: whitesmoke;
+      }
+    </style>
+<body>
+    <form method="POST" action="" > 
+        {% csrf_token %}   
+    <div class="container">
+        <div class="upper">
+            <h1>Add New Task</h1>  
+        </div>
+
     
-    <h1>Add New Task</h1>  
-
-        <form method="POST" action="" >  
-            {% csrf_token %}  
+        <div class="middle">
             <table class="form">
                 {{ form.as_table }} 
                  
             </table>
+        </div>
 
-            <button class="back-button"><a href="{% url 'todolist:show_todolist' %}" class="back-text-button">Back</a></button>
-            <button class="submit-button"><input type="submit" name="submit" value="Daftar"/></button>
-        </form>
+        <div class="lower">
+            <div>
+                <button class="back-button"><a href="{% url 'todolist:show_todolist' %}" class="back-text-button" value="back-button">Back</a></button>
+            </div>
+            <div>
+                <button class="submit-button"><input type="submit" name="submit" value="Daftar"/></button>
+            </div>
+            
+           
+        </div>
+   
 
-</div>
+    </div>
+    </form>
+</body>
+</html>
 
-{% endblock content %}
+
+
+
+
+
+
+
+
+

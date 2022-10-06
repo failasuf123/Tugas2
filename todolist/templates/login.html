@@ -1,10 +1,207 @@
-{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login todolist</title>
+    <!-- font type ubuntu connect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        h2{
+            font-size: 28px;
+            color: #5DB075;
+            margin-bottom: 5px;
+        }
+        p{
+            font-size: 12px;
+            color: gray;
+        }
+        li{
+            font-size: 12px;
+            color: red;
+            margin-bottom: 5px;
+        }
+        body{
+            background-color: #141b18;
+    
+            color: #778899;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 350px;
+            width: 300px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            border: solid 1px;
+            border-radius: 18px;
+            background-color: whitesmoke;
+        }
+        .container:hover{
+            box-shadow: 0px 4px 20px 5px rgba(145,255,219,0.75);
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            padding: 5px;
+            margin-top: 12px;
+            border-bottom: 1px solid gray;
+            border-width: 100%;
+        }
+        .form-content{
+            display: flex;
+           
+            flex-direction: column;
+         
+            padding: 0px;;
+            outline: none;
+            border: none;
+           
+        }
+        .form{
+            
+            width: 100%;
+            justify-content: center;
+            margin: 15px 0;
+            padding: 0;
+           
+            
+        }
+        .inputan{
+            height: 28px;
+            width: 100%;
+            padding: 6px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid gray;
+           
+        }
+        .footer{
+            margin: 15px 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+        }
+        .footer button{
+            margin-bottom: 12px;
+            cursor: pointer;
+            height: 36px;
+            width: 150px;
+            border: none;
+            background: #5DB075;
+            border-radius: 14px ;
+            color: whitesmoke;
+        }
+        .footer button:hover{
+            background-color: whitesmoke;
+            border: solid 1px #5DB075 ;
+            color: #5DB075;
+            transition: 0.8s;
+        }
+        .footer button:active{
+            background-color: #5DB075;
+        }
+        .signup-temp p a{
+            color: green;
+            cursor: pointer;
+            margin-top: 8px;
+         
+            
+        }
+        .signup-temp p a:hover{
+            border-bottom: #5DB075 1px solid;
+            font-weight: bold;
+            transition: .5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Login</h2>
+            <p>Halo! apa yang akan anda lakukan hari ini?</p>
+        </div>
+        <form method="POST" action="">
+            {% csrf_token %}
+        <div class="form-content">
+           
+                <div class="form">
+                    <input type="text" name="username" placeholder="Username" class="inputan">
+                    
+                </div>
+                <div class="form">
+                    <input type="password" name="password" placeholder="Password" class="inputan">
+                   
+                </div>
+
+                 
+        
+        </div>
+
+        <div class="footer">
+
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}     
+
+            <div class="login-btn-temp">
+                <button class="login-btn" type="submit" value="Login"> Login </button>
+            </div>
+       
+
+
+            <div class="signup-temp">
+                <p>Belum mempunyai akun ? <a href="{% url 'todolist:signup_user' %}">Sign Up</a>
+                </p>
+            </div>
+        
+            
+            
+        </div>
+    </form>
+
+    </div>
+    
+</body>
+</html>
+
+
+
+<!-- 
 {% block meta %}
 <title>Login</title>
 {% endblock meta %}
 
 {% block content %}
+
 
 <div class = "login">
 
@@ -42,4 +239,4 @@
 
 </div>
 
-{% endblock content %}
+{% endblock content %} -->

@@ -19,7 +19,7 @@ from django.contrib.auth.decorators import login_required
 def show_todolist(request):
     data_Task = Task.objects.filter(user=request.user)
     context = {
-    'name_user' : 'Failasuf Indi Marsendy',
+    'name_user' : 'Thare',
     'data' : data_Task,
     'last_login': request.COOKIES['last_login'],
     }
