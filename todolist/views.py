@@ -1,4 +1,5 @@
 import datetime
+from operator import imod
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -12,6 +13,10 @@ from django.contrib import messages
 
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
+
+from django.http import HttpResponse
+from django.core import serializers
+
 # Create your views here.
 
 
@@ -77,4 +82,12 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('todolist:login_user'))
     response.delete_cookie('last_login')
     return response
-    
+
+def show_json(request):
+    data = Task.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+def show_json_by_id(request, id):
+    data =  Task.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+    # return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")

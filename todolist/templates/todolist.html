@@ -41,7 +41,7 @@
         .header div{
           margin: 0 10px ;
         }
-                .header button{
+        .header button{
           height: 35px;
           width: 80px;
           margin: 8px;
@@ -253,6 +253,33 @@
   
     </div>
   </div>
+
+  <script>
+    function showCountries(){
+            let xhr = new XMLHttpRequest() //Memanggil xml baru
+
+            xhr.open('GET', 'https://restcountries.com/v3.1/all', true) // (Inisialisasi request, Data, (true == asycronous , false == sycronous))
+
+            xhr.onload = function(){
+                if(xhr.status == 200){
+                    console.log('success')
+                    let countries = JSON.parse(this.response)
+                    console.log(countries)
+
+                    countries.forEach(country => {
+                        const countryCard = document.createElement('div')
+                        const countryCardImage = document.createElement('img')
+                        countryCard.innerHTML = country.
+                        countryCardImage.src = country.flags
+                        countryCard.appendChild(countryCardImage)
+                        document.getElementById('feed').appendChild(countryCard)
+                    })
+                }
+            }
+
+            xhr.send()
+        }
+  </script>
 
 
   
