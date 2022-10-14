@@ -17,11 +17,14 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.core import serializers
 
+from django.http import JsonResponse
+
 # Create your views here.
 
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
+    
     data_Task = Task.objects.filter(user=request.user)
     context = {
     'name_user' : 'Thare',
@@ -31,7 +34,20 @@ def show_todolist(request):
 
     return(render(request, "todolist.html",context))
 
+def crate_task_ajax(request):
+    form = CreateTaskForm()
+    data = Task.objects.all()
+    if request.method == "POST":
+        form = CreateTaskForm(request.POST)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.user = request.user
+            new_form.save()
+            messages.success(request, 'Task telah berhasil dibuat!')
+        return redirect('todolist:show_todolist')
 
+    context = {'form': form}
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 def create_task(request):
     form = CreateTaskForm()
 
@@ -91,3 +107,9 @@ def show_json_by_id(request, id):
     data =  Task.objects.all()
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
     # return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+
+def ajax_mode(request):
+    data_Task = Task.objects.all()
+    return JsonResponse({
+        "task": list(data_Task.values())
+    })

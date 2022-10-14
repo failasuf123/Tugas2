@@ -8,6 +8,7 @@ from todolist.views import logout_user
 from todolist.views import create_task
 from todolist.views import show_json
 from todolist.views import show_json_by_id
+from todolist.views import ajax_mode
 
 
 app_name = "todolist"
@@ -20,4 +21,5 @@ urlpatterns = [
     path('logout/', logout_user, name='logout_user'), 
     path('json/', show_json, name='show_json'),
     path('json/<int:id>', show_json_by_id, name='show_json_by_id'),
+    path('ajax_mode', ajax_mode, name='ajax_mode'),
 ]
